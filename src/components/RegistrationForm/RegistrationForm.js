@@ -12,6 +12,7 @@ export default class RegistrationForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { user_name, password, favorite_city } = ev.target
+    // console.log( favorite_city.value);
 
     this.setState({error: null})
     AuthApiService.postUser({
@@ -67,12 +68,35 @@ export default class RegistrationForm extends Component {
           <label htmlFor='RegistrationForm__favorite_city'>
             Select Your City
           </label>
-          <Input
-            name='favorite_city'
-            type='text'
-            required
-            id='RegistrationForm__favorite_city'>
-          </Input>
+          <select name='favorite_city' required id='RegistrationForm__favorite_city'>
+            <option value = '1'>Atlanta</option>
+            <option value = '2'> Baltimore</option>
+            <option value = '3'> Boston</option>
+            <option value = '4'> Chicago</option>
+            <option value = '5'> Cincinnati</option>
+            <option value = '6'> Cleveland</option>
+            <option value = '7'> Detroit</option>
+            <option value = '8'> Dallas</option>
+            <option value = '9'> Denver</option>
+            <option value = '10'>Houston</option>
+            <option value = '11'>Kansas City</option>
+            <option value = '12'>Los Angeles</option>
+            <option value = '13'>Miami</option>
+            <option value = '14'>Milwaukee</option>
+            <option value = '15'>Minnesota</option>
+            <option value = '16'>New York</option>
+            <option value = '17'>Oakland</option>
+            <option value = '18'>Philadelphia</option>
+            <option value = '19'>Phoneix</option>
+            <option value = '20'>Pittsburgh</option>
+            <option value = '21'>Saint Louis</option>
+            <option value = '22'>San Diego</option>
+            <option value = '23'>San Francisco</option>
+            <option value = '24'>Seattle</option>
+            <option value = '25'>Tampa Bay</option>
+            <option value = '26'>Toronto</option>
+            <option value = '27'>Washington</option>
+          </select>
         </div>
         <Button type='submit'>
           Register
