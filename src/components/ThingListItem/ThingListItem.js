@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { ThingStarRating } from '../ThingStarRating/ThingStarRating'
 import './ThingListItem.css'
 
 export default class ThingListItem extends Component {
@@ -18,7 +17,6 @@ export default class ThingListItem extends Component {
           </div>
 
           <div className='ThingListItem__reviews'>
-            <ThingStarRating rating={thing.average_review_rating} />
             <span id='ThingListItem__review-count'>{readableReviewCount(thing.number_of_reviews)}</span>
           </div>
         </div>

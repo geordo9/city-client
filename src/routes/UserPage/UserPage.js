@@ -1,28 +1,27 @@
 import React, { Component } from 'react'
 import ThingListContext from '../../contexts/ThingListContext'
-import ThingApiService from '../../services/thing-api-service'
+import CityApiService from '../../services/city-api-service'
 import { Section } from '../../components/Utils/Utils'
 import ThingListItem from '../../components/ThingListItem/ThingListItem'
-import './ThingListPage.css'
+import './UserPage.css'
 
 export default class ThingListPage extends Component {
   static contextType = ThingListContext
 
   componentDidMount() {
     this.context.clearError()
-    ThingApiService.getThings()
-      .then(this.context.setThingList)
+    // CityApiService.getShowdowns() need to write this
+      // .then(this.context.setShowdownList)
       .catch(this.context.setError)
   }
 
-  renderThings() {
-    const { thingList = [] } = this.context
-    return thingList.map(thing =>
-      <ThingListItem
-        key={thing.id}
-        thing={thing}
-      />
-    )
+  renderShowdowns() {
+    const { showdownList = [] } = this.context
+    return showdownList.map(showdown =>
+        console.log('List will go here')
+        // <h2>{showdown.title}</h2>
+        // <h3>Date Created: {showdown.date_created}</h3>
+    );
   }
 
   render() {
@@ -31,7 +30,7 @@ export default class ThingListPage extends Component {
       <Section list className='ThingListPage'>
         {error
           ? <p className='red'>There was an error, try again</p>
-          : this.renderThings()}
+          : this.renderShowdowns()}
       </Section>
     )
   }

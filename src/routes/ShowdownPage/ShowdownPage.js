@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ThingContext from '../../contexts/ThingContext'
-import ThingApiService from '../../services/thing-api-service'
+import CityApiService from '../../services/city-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { ThingStarRating } from '../../components/ThingStarRating/ThingStarRating'
 import ReviewForm from '../../components/ReviewForm/ReviewForm'
-import './ThingPage.css'
+import './ShowdownPage.css'
 
 export default class ThingPage extends Component {
   static defaultProps = {
@@ -17,10 +17,10 @@ export default class ThingPage extends Component {
   componentDidMount() {
     const { thingId } = this.props.match.params
     this.context.clearError()
-    ThingApiService.getThing(thingId)
+    CityApiService.getThing(thingId)
       .then(this.context.setThing)
       .catch(this.context.setError)
-    ThingApiService.getThingReviews(thingId)
+    CityApiService.getThingReviews(thingId)
       .then(this.context.setReviews)
       .catch(this.context.setError)
   }
