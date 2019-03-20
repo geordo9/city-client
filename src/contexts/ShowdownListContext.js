@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 
-const ThingListContext = React.createContext({
+const ShowdownListContext = React.createContext({
   thingList: [],
   error: null,
   setError: () => {},
   clearError: () => {},
-  setThingList: () => {},
+  setShowdownList: () => {},
 })
-export default ThingListContext
+export default ShowdownListContext
 
 export class ThingListProvider extends Component {
   state = {
-    thingList: [],
+    showdownList: [],
     error: null,
   };
 
-  setThingList = thingList => {
-    this.setState({ thingList })
+  setShowdownList = showdownList => {
+    this.setState({ showdownList })
   }
 
   setError = error => {
@@ -30,16 +30,16 @@ export class ThingListProvider extends Component {
 
   render() {
     const value = {
-      thingList: this.state.thingList,
+      showdownList: this.state.showdownList,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setThingList: this.setThingList,
+      setShowdownList: this.setShowdownList,
     }
     return (
-      <ThingListContext.Provider value={value}>
+      <ShowdownListContext.Provider value={value}>
         {this.props.children}
-      </ThingListContext.Provider>
+      </ShowdownListContext.Provider>
     )
   }
 }

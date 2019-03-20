@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import ThingListContext from '../../contexts/ThingListContext'
 import CityApiService from '../../services/city-api-service'
 import { Button } from '../../components/Utils/Utils'
 import ThingListItem from '../../components/ThingListItem/ThingListItem'
 
 export default class ThingListPage extends Component {
-  static contextType = ThingListContext
 
   render() {
       return (

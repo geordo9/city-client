@@ -76,6 +76,10 @@ const ThingApiService = {
   //get function that gets a showdown and displays on a page
 
   //get function that gets all showdowns a user has created
+  getUserShowdowns(userId){},
+
+  //get function that returns the user
+  getUser(userId){},
 }
 
 export default ThingApiService

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import ThingContext from '../../contexts/ThingContext'
+import UserContext from '../../contexts/UserContext'
 import ThingApiService from '../../services/thing-api-service'
 import { Button, Textarea } from '../Utils/Utils'
 import './ReviewForm.css'
 
 export default class ReviewForm extends Component {
-  static contextType = ThingContext
+  static contextType = UserContext
 
   handleSubmit = ev => {
     ev.preventDefault()

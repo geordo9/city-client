@@ -1,27 +1,28 @@
 import React, { Component } from 'react'
 
-export const nullThing = {
-  author: {},
-  tags: [],
+export const nullUser = {
+  user_name: ' ',
+  favorite_city: ' ',
+  favorite_teams: [],
 }
 
-const ThingContext = React.createContext({
-  thing: nullThing,
-  reviews: [],
+const UserContext = React.createContext({
+  user: nullUser,
+  showdowns: [],
   error: null,
   setError: () => {},
   clearError: () => {},
-  setThing: () => {},
-  clearThing: () => {},
+  setUser: () => {},
+  clearShowdowns: () => {},
   setReviews: () => {},
-  addReview: () => {},
+  addShowdown: () => {},
 })
 
-export default ThingContext
+export default UserContext
 
-export class ThingProvider extends Component {
+export class UserProvider extends Component {
   state = {
-    thing: nullThing,
+    user: nullUser,
     error: null,
   };
 
@@ -34,23 +35,22 @@ export class ThingProvider extends Component {
     this.setState({ error: null })
   }
 
-  setThing = thing => {
-    this.setState({ thing })
+  setUser = user => {
+    this.setState({ user })
   }
 
-  setReviews = reviews => {
-    this.setState({ reviews })
+  setShowdowns = showdowns => {
+    this.setState({ showdowns })
   }
 
-  clearThing = () => {
-    this.setThing(nullThing)
-    this.setReviews([])
+  clearShowdowns = () => {
+    this.setShowdowns([])
   }
 
-  addReview = review => {
-    this.setReviews([
-      ...this.state.reviews,
-      review
+  addShowdown = showdown => {
+    this.setShowdowns([
+      ...this.state.showdowns,
+      showdown
     ])
   }
 
@@ -67,9 +67,9 @@ export class ThingProvider extends Component {
       addReview: this.addReview,
     }
     return (
-      <ThingContext.Provider value={value}>
+      <UserContext.Provider value={value}>
         {this.props.children}
-      </ThingContext.Provider>
+      </UserContext.Provider>
     )
   }
 }

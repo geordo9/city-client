@@ -7,6 +7,7 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import UserPage from '../../routes/UserPage/UserPage'
 
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
@@ -68,6 +69,10 @@ class App extends Component {
             <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
+            />
+            <PrivateRoute
+              path={'/user/:userId'}
+              component={UserPage}
             />
             <Route
               component={NotFoundPage}
