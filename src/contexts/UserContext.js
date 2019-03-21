@@ -3,13 +3,15 @@ import React, { Component } from 'react'
 export const nullUser = {
   user_name: ' ',
   favorite_city: ' ',
-  favorite_teams: [],
+  favorite_baseball: ' ',
 }
 
 const UserContext = React.createContext({
   user: nullUser,
   showdowns: [],
   error: null,
+  favorite_city: ' ',
+  favorite_baseball: ' ',
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
@@ -54,6 +56,18 @@ export class UserProvider extends Component {
     ])
   }
 
+  setCity = favorite_city => {
+    this.setState({
+      favorite_city
+    })
+  }
+
+  setBaseball = favorite_baseball => {
+    this.setState({
+      favorite_baseball
+    })
+  }
+
   render() {
     const value = {
       user: this.state.user,
@@ -65,6 +79,8 @@ export class UserProvider extends Component {
       setShowdowns: this.setShowdowns,
       clearShowdowns: this.clearShowdowns,
       addShowdown: this.addShowdown,
+      favorite_baseball: this.favorite_baseball,
+      favorite_city: this.favorite_city
     }
     return (
       <UserContext.Provider value={value}>

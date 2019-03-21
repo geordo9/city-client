@@ -90,6 +90,19 @@ const ThingApiService = {
           : res.json()
       )
   },
+  getCityWithUserId(userId){
+    const user = this.getUser(userId)
+    return fetch(`${config.API_ENDPOINT}/city/${user.favorite_city}`, {
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  }
 }
 
 export default ThingApiService
