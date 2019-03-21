@@ -56,15 +56,15 @@ export class UserProvider extends Component {
 
   render() {
     const value = {
-      thing: this.state.thing,
-      reviews: this.state.reviews,
+      user: this.state.user,
+      showdowns: this.state.showdowns,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setThing: this.setThing,
-      setReviews: this.setReviews,
-      clearThing: this.clearThing,
-      addReview: this.addReview,
+      setUser: this.setUser,
+      setShowdowns: this.setShowdowns,
+      clearShowdowns: this.clearShowdowns,
+      addShowdown: this.addShowdown,
     }
     return (
       <UserContext.Provider value={value}>

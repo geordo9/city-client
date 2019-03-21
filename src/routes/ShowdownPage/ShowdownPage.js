@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ThingContext from '../../contexts/ThingContext'
+import ThingContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { ThingStarRating } from '../../components/ThingStarRating/ThingStarRating'

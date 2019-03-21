@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
-import { Section } from '../../components/Utils/Utils'
+import { Section, Button } from '../../components/Utils/Utils'
 import './UserPage.css'
 
 export default class ThingListPage extends Component {
@@ -9,32 +9,35 @@ export default class ThingListPage extends Component {
 
   componentDidMount() {
     const { userId } = this.props.match.params
+    console.log(userId);
     this.context.clearError()
     //will need to write both of these functions in the Services
     CityApiService.getUser(userId)
       .then(this.context.setUser)
       .then(this.context.setError)
-    CityApiService.getUserShowdowns()
-      .then(this.context.setShowdowns)
-      .catch(this.context.setError)
+    // CityApiService.getUserShowdowns()
+    //   .then(this.context.setShowdowns)
+    //   .catch(this.context.setError)
   }
 
   renderUser() {
     const { user, showdowns } = this.context
     return <>
       <h2>{user.user_name}</h2>
-      <UserFavorites thing={user} />
+      <h3>Favorite City: {user.favorite_city}</h3>
+      <UserFavorites user={user} />
       <UserShowdowns showdowns={showdowns} />
-      
+      <Button className='UserPage__create-new-showdown'>CREATE NEW SHOWDOWN</Button>
     </>
   }
 
   render() {
     const { error, user } = this.context
     let content
+    console.log(this.context);
     if (error) {
-      content = (error.error === `Thing doesn't exist`)
-        ? <p className='red'>Thing not found</p>
+      content = (error.error === `User doesn't exist`)
+        ? <p className='red'>User not found</p>
         : <p className='red'>There was an error</p>
     } else if (!user.id) {
       content = <div className='loading' />
@@ -50,7 +53,17 @@ export default class ThingListPage extends Component {
 }
 
 function UserFavorites({user}) {
-
+  return (
+    <ul className='UserPage__showdowns'>
+      {user.favorite_teams.map(team =>
+        <li key={team.id} className='UserPage__showdown'>
+          <p className='UserPage__team-name'>
+            {team.team}
+          </p>
+        </li>
+      )}
+    </ul>
+  )
 }
 
 function UserShowdowns({ showdowns = [] }) {

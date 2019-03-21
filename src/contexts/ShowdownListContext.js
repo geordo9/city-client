@@ -9,7 +9,7 @@ const ShowdownListContext = React.createContext({
 })
 export default ShowdownListContext
 
-export class ThingListProvider extends Component {
+export class ShowdownListProvider extends Component {
   state = {
     showdownList: [],
     error: null,

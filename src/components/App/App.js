@@ -70,7 +70,7 @@ class App extends Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <PrivateRoute
+            <Route
               path={'/user/:userId'}
               component={UserPage}
             />

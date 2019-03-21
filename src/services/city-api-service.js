@@ -72,14 +72,24 @@ const ThingApiService = {
       )
   },
   //post function to create a new showdown, save it to the user, and take us to the showdown page
-
+  postShowdown(showdown){},
   //get function that gets a showdown and displays on a page
-
+  getShowdown(showdownId){},
   //get function that gets all showdowns a user has created
   getUserShowdowns(userId){},
-
   //get function that returns the user
-  getUser(userId){},
+  getUser(userId){
+    return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
 }
 
 export default ThingApiService
