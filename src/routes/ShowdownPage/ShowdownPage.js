@@ -1,53 +1,47 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ThingContext from '../../contexts/UserContext'
+import UserContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
+import ShowdownApiService from '../../services/showdown-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
-import { ThingStarRating } from '../../components/ThingStarRating/ThingStarRating'
-import ReviewForm from '../../components/ReviewForm/ReviewForm'
 import './ShowdownPage.css'
 
-export default class ThingPage extends Component {
+export default class ShowdownPage extends Component {
   static defaultProps = {
     match: { params: {} },
   }
 
-  static contextType = ThingContext
+  static contextType = UserContext
 
   componentDidMount() {
-    const { thingId } = this.props.match.params
+    const { userId, showdownId } = this.props.match.params
     this.context.clearError()
-    CityApiService.getThing(thingId)
-      .then(this.context.setThing)
+    CityApiService.getUser(userId)
+      .then(this.context.setUser)
       .catch(this.context.setError)
-    CityApiService.getThingReviews(thingId)
-      .then(this.context.setReviews)
+    ShowdownApiService.getShowdown(showdownId)
+      .then(this.context.setShowdown)
       .catch(this.context.setError)
   }
 
-  componentWillUnmount() {
-    this.context.clearThing()
-  }
 
-  renderThing() {
-    const { thing, reviews } = this.context
+  renderShowdown() {
+    const { user, showdown } = this.context
     return <>
-      <div className='ThingPage__image' style={{backgroundImage: `url(${thing.image})`}} />
-      <h2>{thing.title}</h2>
-      <ThingContent thing={thing} />
-      <ThingReviews reviews={reviews} />
-      <ReviewForm />
+      <h2>{user.user_name}'s {showdown.user_baseball_team}</h2>
+      <h2>VS.</h2>
+      <h3>{showdown.opp_baseball_team}</h3>
+      <h4>Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}</h4>
     </>
   }
 
   render() {
-    const { error, thing } = this.context
+    const { error, showdown } = this.context
     let content
     if (error) {
-      content = (error.error === `Thing doesn't exist`)
+      content = (error.error === `Showdown doesn't exist`)
         ? <p className='red'>Thing not found</p>
         : <p className='red'>There was an error</p>
-    } else if (!thing.id) {
+    } else if (!showdown.id) {
       content = <div className='loading' />
     } else {
       content = this.renderThing()
@@ -60,34 +54,28 @@ export default class ThingPage extends Component {
   }
 }
 
-function ThingContent({ thing }) {
-  return (
-    <p className='ThingPage__content'>
-      {thing.content}
-    </p>
-  )
-}
+// function ThingContent({ thing }) {
+//   return (
+//     <p className='ThingPage__content'>
+//       {thing.content}
+//     </p>
+//   )
+// }
 
-function ThingReviews({ reviews = [] }) {
-  return (
-    <ul className='ThingPage__review-list'>
-      {reviews.map(review =>
-        <li key={review.id} className='ThingPage__review'>
-          <p className='ThingPage__review-text'>
-            <FontAwesomeIcon
-              size='lg'
-              icon='quote-left'
-              className='ThingPage__review-icon blue'
-            />
-            {review.text}
-          </p>
-          <p className='ThingPage__review-user'>
-            <ThingStarRating rating={review.rating} />
-            <Hyph />
-            {review.user.full_name}
-          </p>
-        </li>
-      )}
-    </ul>
-  )
-}
+// function ThingReviews({ reviews = [] }) {
+//   return (
+//     <ul className='ThingPage__review-list'>
+//       {reviews.map(review =>
+//         <li key={review.id} className='ThingPage__review'>
+//           <p className='ThingPage__review-text'>
+//             {review.text}
+//           </p>
+//           <p className='ThingPage__review-user'>
+//             <Hyph />
+//             {review.user.full_name}
+//           </p>
+//         </li>
+//       )}
+//     </ul>
+//   )
+// }

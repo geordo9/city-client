@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
-import { Section, Button } from '../../components/Utils/Utils'
+import ShowdownApiService from '../../services/showdown-api-service'
+import { Section, Button, Hyph } from '../../components/Utils/Utils'
 import './UserPage.css'
 
 export default class ThingListPage extends Component {
@@ -9,25 +10,19 @@ export default class ThingListPage extends Component {
 
   componentDidMount() {
     const { userId } = this.props.match.params
-    console.log(userId);
     this.context.clearError()
     //will need to write both of these functions in the Services
     CityApiService.getUser(userId)
       .then(this.context.setUser)
       .then(this.context.setError)
-    // CityApiService.getCityWithUserId(userId)
-    //   .then(this.context.setCity)
-    //   .then(this.context.setError)
-    // CityApiService.getBaseballTeam(this.context.user)
-    //   .then(this.context.setBaseball)
-    //   .then(this.context.setError)
-    // CityApiService.getUserShowdowns()
-    //   .then(this.context.setShowdowns)
-    //   .catch(this.context.setError)
+    ShowdownApiService.getShowdownByUser(userId)
+      .then(this.context.setShowdowns)
+      .then(this.context.setError)
   }
 
   renderUser() {
-    const { user, showdowns, favorite_city } = this.context
+    const { user, showdowns} = this.context
+    console.log(this.context);
 
     return <>
       <h2>{user.user_name}</h2>
@@ -203,15 +198,21 @@ function UserBaseballSwitch(baseballId) {
 }
 
 function UserShowdowns({ showdowns = [] }) {
+  
   return (
     <ul className='UserPage__showdowns'>
       {showdowns.map(showdown =>
         <li key={showdown.id} className='UserPage__showdown'>
-          <p className='UserPage__showdown-title'>
-            {showdown.title}
-          </p>
-          <p className='ThingPage__review-user'>
-            {showdown.date_created}
+          <h3 className='UserPage__showdown-matchup'>
+            {UserBaseballSwitch(showdown.user_baseball_team)} VS. {UserBaseballSwitch(showdown.opp_baseball_team)}
+          </h3>
+          <h4 className='UserPage__showdown-record'>
+            Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
+          </h4>
+          <Button>Details</Button>
+          <Button>Delete</Button>
+          <p className='UserPage__showdown-created'>
+            Created On: {showdown.date_created}
           </p>
         </li>
       )}

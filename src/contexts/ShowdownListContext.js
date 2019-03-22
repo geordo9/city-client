@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-const ShowdownListContext = React.createContext({
+const ShowdownContext = React.createContext({
   thingList: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setShowdownList: () => {},
 })
-export default ShowdownListContext
+export default ShowdownContext
 
-export class ShowdownListProvider extends Component {
+export class ShowdownProvider extends Component {
   state = {
     showdownList: [],
     error: null,
@@ -37,9 +37,9 @@ export class ShowdownListProvider extends Component {
       setShowdownList: this.setShowdownList,
     }
     return (
-      <ShowdownListContext.Provider value={value}>
+      <ShowdownContext.Provider value={value}>
         {this.props.children}
-      </ShowdownListContext.Provider>
+      </ShowdownContext.Provider>
     )
   }
 }

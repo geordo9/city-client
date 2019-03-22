@@ -1,7 +1,7 @@
 import config from '../config'
 import TokenService from './token-service';
 
-const ThingApiService = {
+const CityApiService = {
   getCities() {
     return fetch(`${config.API_ENDPOINT}/city`, {
       headers: {
@@ -71,10 +71,7 @@ const ThingApiService = {
           : res.json()
       )
   },
-  //post function to create a new showdown, save it to the user, and take us to the showdown page
-  postShowdown(showdown){},
-  //get function that gets a showdown and displays on a page
-  getShowdown(showdownId){},
+  
   //get function that gets all showdowns a user has created
   getUserShowdowns(userId){},
   //get function that returns the user
@@ -105,4 +102,4 @@ const ThingApiService = {
   }
 }
 
-export default ThingApiService
+export default CityApiService

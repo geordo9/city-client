@@ -42,6 +42,7 @@ export class UserProvider extends Component {
   }
 
   setShowdowns = showdowns => {
+    console.log('running!')
     this.setState({ showdowns })
   }
 
