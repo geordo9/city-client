@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const ShowdownContext = React.createContext({
-  thingList: [],
+  showdownList: [],
   error: null,
   setError: () => {},
   clearError: () => {},

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import * as serviceWorker from './serviceWorker'
-import { ShowdownListProvider } from './contexts/ShowdownListContext'
+import { ShowdownProvider } from './contexts/ShowdownListContext'
 import { UserProvider } from './contexts/UserContext'
 import App from './components/App/App'
 import './index.css'
@@ -37,11 +37,11 @@ library.add(
 
 ReactDOM.render(
   <BrowserRouter>
-    <ShowdownListProvider>
+    {/* <ShowdownProvider> */}
       <UserProvider>
         <App />
       </UserProvider>
-    </ShowdownListProvider>
+    {/* </ShowdownProvider> */}
   </BrowserRouter>,
   document.getElementById('root')
 )

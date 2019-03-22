@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CityApiService from '../../services/city-api-service'
 import { Button } from '../../components/Utils/Utils'
-import ThingListItem from '../../components/ThingListItem/ThingListItem'
+
 
 export default class ThingListPage extends Component {
 

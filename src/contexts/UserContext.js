@@ -6,8 +6,18 @@ export const nullUser = {
   favorite_baseball: ' ',
 }
 
+export const nullShowdown = {
+  total_user_wins: 0,
+  total_user_loses: 0,
+  user_baseball_team: ' ',
+  opp_baseball_team: ' ',
+  wins_baseball: 0,
+  losses_baseball: 0,
+}
+
 const UserContext = React.createContext({
   user: nullUser,
+  showdown: nullShowdown,
   showdowns: [],
   error: null,
   favorite_city: ' ',
@@ -25,6 +35,7 @@ export default UserContext
 export class UserProvider extends Component {
   state = {
     user: nullUser,
+    showdown: nullShowdown,
     error: null,
   };
 
@@ -42,8 +53,11 @@ export class UserProvider extends Component {
   }
 
   setShowdowns = showdowns => {
-    console.log('running!')
     this.setState({ showdowns })
+  }
+
+  setShowdown = showdown => {
+    this.setState({ showdown })
   }
 
   clearShowdowns = () => {
@@ -73,11 +87,13 @@ export class UserProvider extends Component {
     const value = {
       user: this.state.user,
       showdowns: this.state.showdowns,
+      showdown: this.state.showdown,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
       setShowdowns: this.setShowdowns,
+      setShowdown: this.setShowdown,
       clearShowdowns: this.clearShowdowns,
       addShowdown: this.addShowdown,
       favorite_baseball: this.favorite_baseball,

@@ -76,6 +76,7 @@ const CityApiService = {
   getUserShowdowns(userId){},
   //get function that returns the user
   getUser(userId){
+    console.log('user got!')
     return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
