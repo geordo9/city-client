@@ -22,6 +22,7 @@ const UserContext = React.createContext({
   error: null,
   favorite_city: ' ',
   favorite_baseball: ' ',
+  playoffs: {},
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
@@ -36,6 +37,7 @@ export class UserProvider extends Component {
   state = {
     user: nullUser,
     showdown: nullShowdown,
+    playoffs: {},
     error: null,
   };
 
@@ -59,6 +61,7 @@ export class UserProvider extends Component {
   setShowdown = showdown => {
     this.setState({ showdown })
   }
+
 
   clearShowdowns = () => {
     this.setShowdowns([])
@@ -88,6 +91,7 @@ export class UserProvider extends Component {
       user: this.state.user,
       showdowns: this.state.showdowns,
       showdown: this.state.showdown,
+      playoffs: this.state.playoffs,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,

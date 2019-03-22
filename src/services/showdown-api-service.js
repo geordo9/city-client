@@ -27,7 +27,6 @@ const ShowdownApiService = {
       )
     },
     getShowdownByUser(userId) {
-        console.log('this is running!');
       return fetch(`${config.API_ENDPOINT}/showdowns/user/${userId}`, {
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`

@@ -9,12 +9,14 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import UserPage from '../../routes/UserPage/UserPage'
 import ShowdownPage from '../../routes/ShowdownPage/ShowdownPage';
+import CreateShowdownPage from '../../routes/CreateShowdownPage/CreateShowdownPage';
 
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import IdleService from '../../services/idle-service'
 
 import './App.css'
+
 
 
 class App extends Component {
@@ -80,6 +82,7 @@ class App extends Component {
               path={'/showdown/:userId/:showdownId'}
               component={ShowdownPage}
             />
+            <Route path={'/create/:userId'} component={CreateShowdownPage} />
             <Route
               component={NotFoundPage}
             />
