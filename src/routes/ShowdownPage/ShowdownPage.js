@@ -22,6 +22,14 @@ export default class ShowdownPage extends Component {
       .catch(this.context.setError)
   }
 
+  handleDeleteShowdown = (e) => {
+    const { location, history } = this.props;
+    const { userId, showdownId } = this.props.match.params
+    ShowdownApiService.deleteShowdown(showdownId)
+      .then(this.context.deleteShowdown)
+      .then(history.push(`/user/${userId}`))
+  }
+
 
   renderShowdown() {
     const { user, showdown } = this.context
@@ -32,7 +40,7 @@ export default class ShowdownPage extends Component {
       <h3>{UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
       <h4>Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}</h4>
       <p>Created On: {showdown.date_created}</p>
-      <Button>DELETE SHOWDOWN</Button>
+      <Button onClick={() => this.handleDeleteShowdown(showdown.id)}>DELETE SHOWDOWN</Button>
       <Button>
         <Link to='/create'>
         CREATE NEW SHOWDOWN
@@ -43,8 +51,6 @@ export default class ShowdownPage extends Component {
 
   render() {
     const { error, showdown } = this.context
-        console.log(this.props.match);
-        console.log(this.context);
     let content
     if (error) {
       content = (error.error === `Showdown doesn't exist`)

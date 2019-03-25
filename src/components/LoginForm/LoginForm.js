@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
+import TokenService from '../../services/token-service';
 
 
 export default class LoginForm extends Component {
@@ -20,10 +21,11 @@ export default class LoginForm extends Component {
       password: password.value
     })
       .then(res => {
+        const decode = TokenService.parseJwt(res.authToken);
         user_name.value = ''
         password.value = ''
         
-        this.props.onLoginSuccess()
+        this.props.onLoginSuccess(decode.user_id)
       })
       .catch(res => {
         this.setState({ error: res.error})

@@ -63,8 +63,10 @@ export class UserProvider extends Component {
   }
 
 
-  clearShowdowns = () => {
-    this.setShowdowns([])
+  deleteShowdown = showdownToDelete => {
+    this.setShowdowns({
+      showdowns: this.state.showdowns.filter(showdown => showdown.id !== showdownToDelete)
+    })
   }
 
   addShowdown = showdown => {

@@ -33,11 +33,11 @@ const ShowdownApiService = {
                 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             },
         })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res => res.json)
+        // (!res.ok)
+        //   ? res.json().then(e => Promise.reject(e))
+        //   : res.json()
+      
     },
     getShowdownByUser(userId) {
       return fetch(`${config.API_ENDPOINT}/showdowns/user/${userId}`, {
@@ -60,7 +60,7 @@ const ShowdownApiService = {
                 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(showdown)
-            }).then(json => console.log(json))
+            })
             .then(res => 
                 (!res.ok) 
                 ? res.json().then(e => Promise.reject(e)) 

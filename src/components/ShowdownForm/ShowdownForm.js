@@ -24,8 +24,8 @@ export default class ShowdownForm extends Component {
 
     this.setState({error: null})
     ShowdownApiService.postShowdown({
-      user_baseball_team: user_baseball_team.value,
-      opp_baseball_team: opp_baseball_team.value,
+      user_baseball_team: Number(user_baseball_team.value),
+      opp_baseball_team: Number(opp_baseball_team.value),
     })
       .then(user => {
         user_baseball_team.value = ''
@@ -123,7 +123,7 @@ export default class ShowdownForm extends Component {
           </select>
         </div>
         <Button type='submit'>
-          Register
+          Submit
         </Button>
       </form>
     )

@@ -39,6 +39,7 @@ export default class ThingListPage extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { error, user } = this.context
     let content
     if (error) {
