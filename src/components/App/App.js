@@ -82,7 +82,7 @@ class App extends Component {
               path={'/showdown/:userId/:showdownId'}
               component={ShowdownPage}
             />
-            <Route path={'/create/:userId'} component={CreateShowdownPage} />
+            <Route path={'/create'} component={CreateShowdownPage} />
             <Route
               component={NotFoundPage}
             />

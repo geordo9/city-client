@@ -2,9 +2,39 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CityApiService from '../../services/city-api-service'
 import { Button } from '../../components/Utils/Utils'
+import TokenService from '../../services/token-service'
+import IdleService from '../../services/idle-service'
 
 
 export default class ThingListPage extends Component {
+  //would like the link here to connect to the user page but can't figure out how to find user id
+  renderUserLink() {
+    return (
+      <div className='Footer__logged-in'>
+        <Button>
+        <Link to={`/users/`}>
+          Go to Your User Page!
+        </Link>
+        </Button>
+      </div>
+    )
+  }
+
+  renderRegisterLink() {
+    return (
+      <section>
+        <header>
+            <h3>Ready to see how your city stacks up? Sign-up!</h3>
+        </header>
+        <Button className='registration-button'>
+            <Link
+                to='/register'>
+                Register
+            </Link>
+        </Button>
+      </section>
+    )
+  }
 
   render() {
       return (
@@ -34,17 +64,11 @@ export default class ThingListPage extends Component {
         <p>[<em>placeholder for screenshot of registration</em>]</p>
         <p>Many cities have multiple teams for a single sport. Who are we to overlap the Islanders 80s dynasty with the Rangers 1994 Stanley Cup?</p>
       </section>
-      <section>
-        <header>
-            <h3>Ready to see how your city stacks up? Sign-up!</h3>
-        </header>
-        <Button className='registration-button'>
-            <Link
-                to='/register'>
-                Register
-            </Link>
-        </Button>
-      </section>
+      <footer>
+        {TokenService.hasAuthToken()
+            ? this.renderUserLink()
+            : this.renderRegisterLink()}
+      </footer>
     </main>
       );
   }

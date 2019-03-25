@@ -27,13 +27,17 @@ export default class ShowdownPage extends Component {
     const { user, showdown } = this.context
     const { userId } = this.props.match.params
     return <>
-      <h2><Link to='/user/:userId'>{user.user_name}'s</Link> {UserBaseballSwitch(showdown.user_baseball_team)}</h2>
+      <h2><Link to={`/user/${userId}`}>{user.user_name}'s</Link> {UserBaseballSwitch(showdown.user_baseball_team)}</h2>
       <h2>VS.</h2>
       <h3>{UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
       <h4>Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}</h4>
       <p>Created On: {showdown.date_created}</p>
       <Button>DELETE SHOWDOWN</Button>
-      <Button>CREATE NEW SHOWDOWN</Button>
+      <Button>
+        <Link to='/create'>
+        CREATE NEW SHOWDOWN
+        </Link>
+      </Button>
     </>
   }
 

@@ -21,25 +21,11 @@ export default class ShowdownForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { user_baseball_team, opp_baseball_team } = ev.target
-    const { userId } = this.props.props.match.params //we're getting this from the token
-    //everything here can go to the backend 
-    CityApiService.getBaseballTeamPlayoffs(user_baseball_team.value)
-      .then(this.setPlayoffs())
-      .then()
-    console.log(this.state)
-    const { wins_baseball } = getBaseballWins( records, opp_baseball_team.value);
-    console.log(wins_baseball)
-    const { losses_baseball } = getBaseballLosses( records, opp_baseball_team.value);
 
     this.setState({error: null})
     ShowdownApiService.postShowdown({
-      user_pin: userId,
-      user_total_wins: wins_baseball,
-      user_total_loses: losses_baseball,
-      user_baseball_team,
-      opp_baseball_team,
-      wins_baseball,
-      losses_baseball
+      user_baseball_team: user_baseball_team.value,
+      opp_baseball_team: opp_baseball_team.value,
     })
       .then(user => {
         user_baseball_team.value = ''
@@ -54,7 +40,7 @@ export default class ShowdownForm extends Component {
 
   render() {
     const { error } = this.state
-    console.log(this.props.props.match.params)
+    // console.log(this.props.props.match.params)
     return (
       <form
         className='ShowdownForm'
@@ -144,138 +130,3 @@ export default class ShowdownForm extends Component {
   }
 }
 
-function getBaseballWins({playoffs}, opponent) {
-  switch(opponent) {
-    case 1:
-      return playoffs.wins_atl
-    case 2:
-      return playoffs.wins_mia
-    case 3:
-      return playoffs.wins_nym
-    case 4:
-      return playoffs.wins_wsh
-    case 5:
-      return playoffs.wins_phi
-    case 6:
-      return playoffs.wins_chc
-    case 7:
-      return playoffs.wins_cin
-    case 8:
-      return playoffs.wins_pit
-    case 9:
-      return playoffs.wins_stl
-    case 10:
-      return playoffs.wins_mil
-    case 11:
-      return playoffs.wins_ari
-    case 12:
-      return playoffs.wins_lad
-    case 13:
-      return playoffs.wins_col
-    case 14:
-      return playoffs.wins_sf
-    case 15:
-      return playoffs.wins_sd
-    case 16:
-      return playoffs.wins_bos
-    case 17:
-      return playoffs.wins_bal
-    case 18:
-      return playoffs.wins_nyy
-    case 19:
-      return playoffs.wins_tb
-    case 20:
-      return playoffs.wins_tor
-    case 21:
-      return playoffs.wins_cws
-    case 22:
-      return playoffs.wins_kc
-    case 23:
-      return playoffs.wins_det
-    case 24:
-      return playoffs.wins_min
-    case 25:
-      return playoffs.wins_cle
-    case 26:
-      return playoffs.wins_laa
-    case 27:
-      return playoffs.wins_hou
-    case 28:
-      return playoffs.wins_oak
-    case 29:
-      return playoffs.wins_sea
-    case 30:
-      return playoffs.wins_tex
-    default:
-      return 0
-  }
-
-}
-
-function getBaseballLosses({playoffs}, opponent) {
-  switch(opponent) {
-    case 1:
-      return playoffs.losses_atl
-    case 2:
-      return playoffs.losses_mia
-    case 3:
-      return playoffs.losses_nym
-    case 4:
-      return playoffs.losses_wsh
-    case 5:
-      return playoffs.losses_phi
-    case 6:
-      return playoffs.losses_chc
-    case 7:
-      return playoffs.losses_cin
-    case 8:
-      return playoffs.losses_pit
-    case 9:
-      return playoffs.losses_stl
-    case 10:
-      return playoffs.losses_mil
-    case 11:
-      return playoffs.losses_ari
-    case 12:
-      return playoffs.losses_lad
-    case 13:
-      return playoffs.losses_col
-    case 14:
-      return playoffs.losses_sf
-    case 15:
-      return playoffs.losses_sd
-    case 16:
-      return playoffs.losses_bos
-    case 17:
-      return playoffs.losses_bal
-    case 18:
-      return playoffs.losses_nyy
-    case 19:
-      return playoffs.losses_tb
-    case 20:
-      return playoffs.losses_tor
-    case 21:
-      return playoffs.losses_cws
-    case 22:
-      return playoffs.losses_kc
-    case 23:
-      return playoffs.losses_det
-    case 24:
-      return playoffs.losses_min
-    case 25:
-      return playoffs.losses_cle
-    case 26:
-      return playoffs.losses_laa
-    case 27:
-      return playoffs.losses_hou
-    case 28:
-      return playoffs.losses_oak
-    case 29:
-      return playoffs.losses_sea
-    case 30:
-      return playoffs.losses_tex
-    default:
-      return 0
-  }
-
-}

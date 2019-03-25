@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
 import ShowdownApiService from '../../services/showdown-api-service'
@@ -28,8 +29,12 @@ export default class ThingListPage extends Component {
       <h2>{user.user_name}</h2>
       <UserCity user={user} />
       <UserBaseball user={user} />
-      <UserShowdowns showdowns={showdowns} />
-      <Button className='UserPage__create-new-showdown'>CREATE NEW SHOWDOWN</Button>
+      <UserShowdowns user={user} showdowns={showdowns} />
+      <Button className='UserPage__create-new-showdown'>
+        <Link to={'/create'}>
+        CREATE NEW SHOWDOWN
+        </Link>
+      </Button>
     </>
   }
 
@@ -122,11 +127,16 @@ function UserCitySwitch(cityId) {
 
 function UserBaseball({user}) {
   return (
-    <ul className='UserPage__teams'>
-      <p className='UserPage__baseball'>
-        Favorite Baseball Team: {UserBaseballSwitch(user.favorite_baseball)}
-      </p>
-    </ul>
+    <section className='UserPage__favorites'>
+      <ul className='UserPage__teams'>
+        <p className='UserPage__baseball'>
+          Favorite Baseball Team: {UserBaseballSwitch(user.favorite_baseball)}
+        </p>
+      </ul>
+      <Button>
+        Edit Favorites
+      </Button>
+    </section>
   )
 }
 
@@ -197,7 +207,7 @@ function UserBaseballSwitch(baseballId) {
   }
 }
 
-function UserShowdowns({ showdowns = [] }) {
+function UserShowdowns({user,  showdowns = [] }) {
   
   return (
     <ul className='UserPage__showdowns'>
@@ -209,7 +219,11 @@ function UserShowdowns({ showdowns = [] }) {
           <h4 className='UserPage__showdown-record'>
             Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
           </h4>
-          <Button>Details</Button>
+          <Button>
+            <Link to={`/showdown/${user.id}/${showdown.id}`}>
+              Details
+              </Link>
+              </Button>
           <Button>Delete</Button>
           <p className='UserPage__showdown-created'>
             Created On: {showdown.date_created}

@@ -23,7 +23,7 @@ export default class RegistrationForm extends Component {
       .then(user => {
         user_name.value = ''
         password.value = ''
-        favorite_city.vaue = ''
+        favorite_city.value = ''
         this.props.onRegistrationSuccess()
       })
       .catch(res => {
