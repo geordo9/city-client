@@ -11,31 +11,27 @@ export default class ShowdownPage extends Component {
   static contextType = UserContext
 
   componentDidMount() {
-    const { userId, showdownId } = this.props.match.params
-    console.log('component mounting')
+    const { showdownId } = this.props.match.params
     this.context.clearError()
-    CityApiService.getUser(userId)
-      .then(this.context.setUser)
-      .catch(this.context.setError)
     ShowdownApiService.getShowdown(showdownId)
       .then(this.context.setShowdown)
       .catch(this.context.setError)
   }
 
   handleDeleteShowdown = (e) => {
-    const { location, history } = this.props;
-    const { userId, showdownId } = this.props.match.params
+    const { history } = this.props;
+    const { showdownId } = this.props.match.params
     ShowdownApiService.deleteShowdown(showdownId)
       .then(this.context.deleteShowdown)
-      .then(history.push(`/user/${userId}`))
+      .then(history.push(`/user`))
   }
 
 
   renderShowdown() {
     const { user, showdown } = this.context
-    const { userId } = this.props.match.params
+    console.log(this.context);
     return <>
-      <h2><Link to={`/user/${userId}`}>{user.user_name}'s</Link> {UserBaseballSwitch(showdown.user_baseball_team)}</h2>
+      <h2><Link to={`/user`}>{user.user_name}'s</Link> {UserBaseballSwitch(showdown.user_baseball_team)}</h2>
       <h2>VS.</h2>
       <h3>{UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
       <h4>Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}</h4>
@@ -50,7 +46,7 @@ export default class ShowdownPage extends Component {
   }
 
   render() {
-    const { error, showdown } = this.context
+    const { error } = this.context
     let content
     if (error) {
       content = (error.error === `Showdown doesn't exist`)

@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
+import UserContext from '../../contexts/UserContext'
 
 export default class LoginPage extends Component {
+  static contextType = UserContext
+
   static defaultProps = {
     location: {},
     history: {
@@ -10,10 +13,9 @@ export default class LoginPage extends Component {
     },
   }
 
-  handleLoginSuccess = (userId) => {
-    const { location, history } = this.props
-    const destination = (location.state || {}).from || `/user/${userId}`
-    //would like this to go to /users/:userId on initial login
+  handleLoginSuccess = () => {
+    const { history } = this.props
+    const destination = '/user'
     history.push(destination)
   }
 

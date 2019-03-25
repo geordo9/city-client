@@ -4,26 +4,28 @@ import UserContext from '../../contexts/UserContext'
 import CityApiService from '../../services/city-api-service'
 import ShowdownApiService from '../../services/showdown-api-service'
 import { Section, Button, Hyph } from '../../components/Utils/Utils'
+import moment from 'moment';
 import './UserPage.css'
 
 export default class ThingListPage extends Component {
   static contextType = UserContext
 
   componentDidMount() {
-    const { userId } = this.props.match.params
+    const userId = this.context.user.id
+    console.log(userId)
     this.context.clearError()
     //will need to write both of these functions in the Services
-    CityApiService.getUser(userId)
-      .then(this.context.setUser)
-      .then(this.context.setError)
-    ShowdownApiService.getShowdownByUser(userId)
-      .then(this.context.setShowdowns)
-      .then(this.context.setError)
+    // CityApiService.getUser(userId)
+    //   .then(this.context.setUser)
+    //   .then(this.context.setError)
+    // ShowdownApiService.getShowdownByUser(userId)
+    //   .then(this.context.setShowdowns)
+    //   .then(this.context.setError)
   }
 
   renderUser() {
     const { user, showdowns} = this.context
-    console.log(this.context);
+    console.log(user)
 
     return <>
       <h2>{user.user_name}</h2>
@@ -221,13 +223,13 @@ function UserShowdowns({user,  showdowns = [] }) {
             Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
           </h4>
           <Button>
-            <Link to={`/showdown/${user.id}/${showdown.id}`}>
+            <Link to={`/showdown/${showdown.id}`}>
               Details
               </Link>
               </Button>
           <Button>Delete</Button>
           <p className='UserPage__showdown-created'>
-            Created On: {showdown.date_created}
+            Created On: {moment(showdown.date_created).format('MMMM Do YYYY')}
           </p>
         </li>
       )}

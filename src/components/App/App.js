@@ -74,15 +74,15 @@ class App extends Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <Route
-              path={'/user/:userId'}
+            <PrivateRoute
+              path={'/user'}
               component={UserPage}
             />
-            <Route 
-              path={'/showdown/:userId/:showdownId'}
+            <PrivateRoute 
+              path={'/showdown/:showdownId'}
               component={ShowdownPage}
             />
-            <Route path={'/create'} component={CreateShowdownPage} />
+            <PrivateRoute path={'/create'} component={CreateShowdownPage} />
             <Route
               component={NotFoundPage}
             />

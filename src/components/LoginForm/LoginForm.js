@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import { Button, Input } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service';
+import UserContext from '../../contexts/UserContext'
+import CityApiService from '../../services/city-api-service';
+import ShowdownApiService from '../../services/showdown-api-service'
 
 
 export default class LoginForm extends Component {
+  static contextType = UserContext;
+
   static defaultProps = {
     onLoginSuccess: () => {}
   }
@@ -22,10 +27,16 @@ export default class LoginForm extends Component {
     })
       .then(res => {
         const decode = TokenService.parseJwt(res.authToken);
+        CityApiService.getUser(decode.user_id)
+          .then(this.context.setUser)
+          .then(this.context.setError)
+        ShowdownApiService.getShowdownByUser(decode.user_id)
+          .then(this.context.setShowdowns)
+          .then(this.context.setError)
         user_name.value = ''
         password.value = ''
         
-        this.props.onLoginSuccess(decode.user_id)
+        this.props.onLoginSuccess()
       })
       .catch(res => {
         this.setState({ error: res.error})

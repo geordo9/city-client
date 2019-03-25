@@ -5,6 +5,8 @@ import ShowdownApiService from '../../services/showdown-api-service';
 import UserContext from '../../contexts/UserContext';
 
 export default class ShowdownForm extends Component {
+  static contextType = UserContext;
+
   static defaultProps = {
     onCreationSuccess: () => {}
   }
@@ -27,7 +29,10 @@ export default class ShowdownForm extends Component {
       user_baseball_team: Number(user_baseball_team.value),
       opp_baseball_team: Number(opp_baseball_team.value),
     })
-      .then(user => {
+      .then(res => {
+        ShowdownApiService.getShowdown(res.id)
+          .then(this.context.addShowdown)
+          .then(this.context.setError)
         user_baseball_team.value = ''
         opp_baseball_team.value = ''
         this.props.onCreationSuccess()
