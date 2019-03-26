@@ -11,7 +11,7 @@ export default class CreateShowdownPage extends Component {
 
   handleCreationSuccess = () => {
     const { history } = this.props
-    history.goBack();
+    history.push('/user');
   }
 
   handleGoBackClicked = () => {

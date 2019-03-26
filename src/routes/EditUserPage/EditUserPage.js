@@ -11,7 +11,7 @@ export default class CreateShowdownPage extends Component {
 
   handleEditSuccess = () => {
     const { history } = this.props
-    history.goBack();
+    history.push('/user');
   }
 
   handleGoBackClicked = () => {
@@ -20,6 +20,7 @@ export default class CreateShowdownPage extends Component {
   }
 
   render() {
+      console.log(this.props.history)
     return (
       <Section className='EditUserPage'>
         <h2>Edit Your Squad of Favorites</h2>

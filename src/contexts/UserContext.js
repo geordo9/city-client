@@ -39,7 +39,7 @@ export class UserProvider extends Component {
   state = {
     user: nullUser,
     showdown: nullShowdown,
-    playoffs: {},
+    showdowns: [],
     error: null,
   };
 
@@ -70,7 +70,7 @@ export class UserProvider extends Component {
 
 
   deleteShowdown = showdownToDelete => {
-    this.setShowdowns(this.state.showdowns.filter(showdown => showdown.id !== showdownToDelete))
+    this.setShowdowns(this.state.showdowns.filter(showdown => showdown.id !== Number(showdownToDelete)))
   }
 
   addShowdown = showdown => {

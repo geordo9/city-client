@@ -21,7 +21,7 @@ export default class ShowdownPage extends Component {
     const { history } = this.props;
     const { showdownId } = this.props.match.params
     ShowdownApiService.deleteShowdown(showdownId)
-      .then(this.context.deleteShowdown)
+      .then(this.context.deleteShowdown(showdownId))
       .then(history.push(`/user`))
   }
 

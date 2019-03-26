@@ -14,34 +14,27 @@ export default class ThingListPage extends Component {
     const userId = this.context.user.id
     console.log(userId)
     this.context.clearError()
-    //will need to write both of these functions in the Services
-    // CityApiService.getUser(userId)
-    //   .then(this.context.setUser)
-    //   .then(this.context.setError)
-    // ShowdownApiService.getShowdownByUser(userId)
-    //   .then(this.context.setShowdowns)
-    //   .then(this.context.setError)
   }
 
   renderUser() {
     const { user, showdowns} = this.context
     console.log(user)
+    console.log (showdowns)
 
     return <>
       <h2>{user.user_name}</h2>
       <UserCity user={user} />
       <UserBaseball user={user} />
       <UserShowdowns user={user} showdowns={showdowns} />
-      <Button className='UserPage__create-new-showdown'>
-        <Link to={'/create'}>
-        CREATE NEW SHOWDOWN
-        </Link>
-      </Button>
+      <Link to={'/create'}>
+        <Button className='UserPage__create-new-showdown'>
+          CREATE NEW SHOWDOWN
+        </Button>
+      </Link >
     </>
   }
 
   render() {
-    console.log(this.props)
     const { error, user } = this.context
     let content
     if (error) {
@@ -224,11 +217,11 @@ function UserShowdowns({user,  showdowns = [] }) {
           <h4 className='UserPage__showdown-record'>
             Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
           </h4>
-          <Button>
-            <Link to={`/showdown/${showdown.id}`}>
+          <Link to={`/showdown/${showdown.id}`}>
+            <Button>  
               Details
-              </Link>
-              </Button>
+            </Button>
+          </Link>
           <Button>Delete</Button>
           <p className='UserPage__showdown-created'>
             Created On: {moment(showdown.date_created).format('MMMM Do YYYY')}

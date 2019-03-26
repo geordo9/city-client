@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/Utils/Utils'
 import TokenService from '../../services/token-service'
+import './LandingPage.css'
 
 
 export default class ThingListPage extends Component {
@@ -36,7 +37,7 @@ export default class ThingListPage extends Component {
 
   render() {
       return (
-        <main role="main">
+        <main role="main" className="LandingPage">
       <header role="banner">
         <h1>City Showdown</h1>
         <h2>A chance to finally stack up your teams against your friends</h2>
@@ -46,14 +47,7 @@ export default class ThingListPage extends Component {
             <h3>Stack up the Cities</h3>
         </header>
         <p>[<em>placeholder for screenshot of records interface</em>]</p>
-        <p>City Showdown lets you compare your city's overall record against another across the four major sports.</p>
-      </section>
-      <section>
-        <header>
-            <h3>Take a look at the Playoffs</h3>
-        </header>
-        <p>[<em>placeholder for screenshot of playoffs interface</em>]</p>
-        <p>Want to take a look at when it really matters? You can distill the Showdown to playoff records.</p>
+        <p>City Showdown lets you compare your city's playoffs record against another across the four major sports.</p>
       </section>
       <section>
         <header>
@@ -62,7 +56,7 @@ export default class ThingListPage extends Component {
         <p>[<em>placeholder for screenshot of registration</em>]</p>
         <p>Many cities have multiple teams for a single sport. Who are we to overlap the Islanders 80s dynasty with the Rangers 1994 Stanley Cup?</p>
       </section>
-      <footer>
+      <footer className="LandingPage__footer">
         {TokenService.hasAuthToken()
             ? this.renderUserLink()
             : this.renderRegisterLink()}
