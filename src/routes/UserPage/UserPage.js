@@ -136,9 +136,11 @@ function UserBaseball({user}) {
           Favorite Baseball Team: {UserBaseballSwitch(user.favorite_baseball)}
         </p>
       </ul>
-      <Button>
-        Edit Favorites
-      </Button>
+      <Link to={'/edit'}>
+        <Button>
+          Edit Favorites
+        </Button>
+      </Link>
     </section>
   )
 }

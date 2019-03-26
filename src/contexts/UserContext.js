@@ -26,9 +26,11 @@ const UserContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
+  editUser: () => {},
   clearShowdowns: () => {},
   setReviews: () => {},
   addShowdown: () => {},
+  deleteShowdown: () => {},
 })
 
 export default UserContext
@@ -51,6 +53,10 @@ export class UserProvider extends Component {
   }
 
   setUser = user => {
+    this.setState({ user })
+  }
+
+  editUser = user => {
     this.setState({ user })
   }
 
@@ -96,9 +102,10 @@ export class UserProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
+      editUser: this.editUser,
       setShowdowns: this.setShowdowns,
       setShowdown: this.setShowdown,
-      clearShowdowns: this.clearShowdowns,
+      deleteShowdown: this.deleteShowdown,
       addShowdown: this.addShowdown,
       favorite_baseball: this.favorite_baseball,
       favorite_city: this.favorite_city

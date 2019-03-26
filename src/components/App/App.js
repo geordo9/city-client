@@ -10,6 +10,7 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import UserPage from '../../routes/UserPage/UserPage'
 import ShowdownPage from '../../routes/ShowdownPage/ShowdownPage';
 import CreateShowdownPage from '../../routes/CreateShowdownPage/CreateShowdownPage';
+import EditUserPage from '../../routes/EditUserPage/EditUserPage'
 
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
@@ -83,6 +84,7 @@ class App extends Component {
               component={ShowdownPage}
             />
             <PrivateRoute path={'/create'} component={CreateShowdownPage} />
+            <PrivateRoute path={'/edit'} component={EditUserPage} />
             <Route
               component={NotFoundPage}
             />

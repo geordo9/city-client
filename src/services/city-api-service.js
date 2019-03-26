@@ -88,6 +88,21 @@ const CityApiService = {
           : res.json()
       )
   },
+  editUser(userId, editedUser){
+    console.log('editing user!')
+    return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(editedUser)
+    }).then(res => 
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e)) 
+      : res.json()
+    )
+  },
   getCityWithUserId(userId){
     const user = this.getUser(userId)
     return fetch(`${config.API_ENDPOINT}/city/${user.favorite_city}`, {

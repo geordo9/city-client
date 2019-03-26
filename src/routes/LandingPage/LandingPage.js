@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import CityApiService from '../../services/city-api-service'
 import { Button } from '../../components/Utils/Utils'
 import TokenService from '../../services/token-service'
-import IdleService from '../../services/idle-service'
 
 
 export default class ThingListPage extends Component {
@@ -12,7 +10,7 @@ export default class ThingListPage extends Component {
     return (
       <div className='Footer__logged-in'>
         <Button>
-        <Link to={`/users/`}>
+        <Link to={`/users`}>
           Go to Your User Page!
         </Link>
         </Button>

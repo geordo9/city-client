@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
-import CityApiService from '../../services/city-api-service'
 import ShowdownApiService from '../../services/showdown-api-service'
 import { Hyph, Section, Button } from '../../components/Utils/Utils'
 import './ShowdownPage.css'
