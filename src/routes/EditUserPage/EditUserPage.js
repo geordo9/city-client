@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Section, Button } from '../../components/Utils/Utils'
 import EditUserForm from '../../components/EditUserForm/EditUserForm'
+import './EditUserPage.css'
 
 export default class CreateShowdownPage extends Component {
   static defaultProps = {

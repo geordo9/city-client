@@ -11,7 +11,7 @@ export default class ThingListPage extends Component {
     return (
       <div className='Footer__logged-in'>
         <Button>
-        <Link to={`/users`}>
+        <Link to={`/user`}>
           Go to Your User Page!
         </Link>
         </Button>

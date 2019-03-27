@@ -1,8 +1,14 @@
 .Header {
-  height: 40px;
+  height: 60px;
+  width: 100%;
   display: flex;
   align-items: normal;
   justify-content: space-between;
+  background-color: #808A9F;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Header h1 {
@@ -11,11 +17,12 @@
 }
 
 .Header a {
-  color: #444;
+  color: #f1ab86;
   text-decoration: none;
 }
 
 .Header__tagline--wide {
+  color: #f9f9fc;
   opacity: 0.35;
   margin-left: 10px;
 }
@@ -45,6 +52,8 @@
 
 .Header__logged-in a {
   border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #f1ab86;
+  background-color: #202a25;
   padding: 5px 15px;
   border-radius: 15px;
 }
@@ -59,9 +68,13 @@
   }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 450px) {
   .Header__tagline--wide {
     display: none;
+  }
+
+  .Header h1 {
+    font-size: 20px;
   }
 
   .Header__tagline--narrow {

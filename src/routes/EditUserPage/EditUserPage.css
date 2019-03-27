@@ -1,0 +1,21 @@
+.EditUserPage Button{
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;    
+}
+
+.EditUserPage label {
+    margin-right: 5px;
+}
+
+#EditUserForm__favorite_city {
+    font-size: 18px;
+}
+
+#EditUserForm__favorite_baseball {
+    font-size: 18px;
+}
+
+.favorite_baseball {
+    margin-top: 5px;
+}

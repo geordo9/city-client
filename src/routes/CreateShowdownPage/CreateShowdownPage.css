@@ -1,0 +1,21 @@
+.CreateShowdownPage Button {
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.CreateShowdownPage label {
+    margin-right: 5px;
+}
+
+#RegistrationForm__user_baseball_team {
+    font-size: 18px;
+}
+
+#RegistrationForm__opp_baseball_team {
+    font-size: 18px;
+}
+
+.opp_baseball_team {
+    margin-top: 5px;
+}

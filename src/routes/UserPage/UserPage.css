@@ -2,3 +2,28 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.UserPage h2 {
+  text-align: center;
+}
+
+.UserPage__favorite-city {
+  margin-left: 20px;
+}
+
+.UserPage__showdowns {
+  list-style-type: none;
+}
+
+.edit_favorites_button {
+  margin-left: 20px;
+}
+
+.UserPage__showdown_details {
+  margin-right: 10px;
+}
+
+.UserPage__create-new-showdown {
+  margin-left: 25px
+}
+

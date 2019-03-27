@@ -56,7 +56,7 @@ export default class ThingListPage extends Component {
 
 function UserCity({user}) {
   return (
-    <h3>Favorite City: {UserCitySwitch(user.favorite_city)}</h3>
+    <h3 className='UserPage__favorite-city'>Favorite City: {UserCitySwitch(user.favorite_city)}</h3>
   )
 }
 
@@ -130,7 +130,7 @@ function UserBaseball({user}) {
         </p>
       </ul>
       <Link to={'/edit'}>
-        <Button>
+        <Button className='edit_favorites_button'>
           Edit Favorites
         </Button>
       </Link>
@@ -217,12 +217,14 @@ function UserShowdowns({user,  showdowns = [] }) {
           <h4 className='UserPage__showdown-record'>
             Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
           </h4>
-          <Link to={`/showdown/${showdown.id}`}>
-            <Button>  
-              Details
-            </Button>
-          </Link>
-          <Button>Delete</Button>
+          <section className='UserPage__showdown_buttons'>
+            <Link to={`/showdown/${showdown.id}`}>
+              <Button className='UserPage__showdown_details'>  
+                Details
+              </Button>
+            </Link>
+            <Button className='UserPage__showdown_delete'>Delete</Button>
+          </section>
           <p className='UserPage__showdown-created'>
             Created On: {moment(showdown.date_created).format('MMMM Do YYYY')}
           </p>

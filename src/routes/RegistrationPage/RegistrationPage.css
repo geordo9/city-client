@@ -1,0 +1,13 @@
+.RegistrationPage Button {
+    margin-top: 10px;
+}
+label {
+    font-size: 18px;
+}
+
+#RegistrationForm__favorite_city {
+    font-size: 18px;
+    margin-left: 20px;
+    padding-left: 20px;
+    text-align: center;
+}
