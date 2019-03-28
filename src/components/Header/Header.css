@@ -4,9 +4,9 @@
   display: flex;
   align-items: normal;
   justify-content: space-between;
-  background-color: #808A9F;
+  background-color: #39414C;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -17,12 +17,12 @@
 }
 
 .Header a {
-  color: #f1ab86;
+  color: #00FFFF;
   text-decoration: none;
 }
 
 .Header__tagline--wide {
-  color: #f9f9fc;
+  color: goldenrod;
   opacity: 0.35;
   margin-left: 10px;
 }
@@ -43,8 +43,8 @@
 }
 
 .Header__not-logged-in a:last-child {
-  background: rgb(255, 121, 121);
-  color: white;
+  background: goldenrod;
+  color: #39414C;
   padding: 5px 15px;
   border-radius: 15px;
   margin-left: 10px;
@@ -52,10 +52,11 @@
 
 .Header__logged-in a {
   border: 1px solid rgba(0, 0, 0, 0.25);
-  color: #f1ab86;
+  color: goldenrod;
   background-color: #202a25;
   padding: 5px 15px;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 450px) {

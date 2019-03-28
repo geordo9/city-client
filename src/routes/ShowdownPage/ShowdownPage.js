@@ -31,17 +31,15 @@ export default class ShowdownPage extends Component {
     const { user, showdown } = this.context
     console.log(this.context);
     return <>
-      <h2><Link to={`/user`}>{user.user_name}'s</Link> Squad</h2> 
+      <h2><Link to={`/user`} className='showdown_user'>{user.user_name}'s</Link> Squad</h2> 
       <h3>{UserBaseballSwitch(showdown.user_baseball_team)} <Hyph />VS.<Hyph /> {UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
       <h4>Playoff Record: <span className='playoff_record'>{showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}</span></h4>
       <p>Created On: {moment(showdown.date_created).format('MMMM Do YYYY')}</p>
       <section className='showdown_buttons'>
         <Button onClick={() => this.handleDeleteShowdown(showdown.id)} className='showdown_delete'>DELETE SHOWDOWN</Button>
-        <Button className='create_showdown'>
-          <Link to='/create'>
-          CREATE NEW SHOWDOWN
-          </Link>
-        </Button>
+        <Link to='/create' className='create_showdown'>
+        CREATE NEW SHOWDOWN
+        </Link>
       </section>
     </>
   }

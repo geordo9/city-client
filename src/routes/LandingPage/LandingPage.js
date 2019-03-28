@@ -10,28 +10,25 @@ export default class ThingListPage extends Component {
   renderUserLink() {
     return (
       <div className='Footer__logged-in'>
-        <Button>
         <Link to={`/user`}>
           Go to Your User Page!
         </Link>
-        </Button>
       </div>
     )
   }
 
   renderRegisterLink() {
     return (
-      <section>
+      <div>
         <header>
-            <h3>Ready to see how your city stacks up? Sign-up!</h3>
+          <h3>Ready to see how your city stacks up? Sign-up!</h3>
         </header>
-        <Button className='registration-button'>
-            <Link
-                to='/register'>
-                Register
-            </Link>
-        </Button>
-      </section>
+          <Link
+            className='registration-button'
+            to='/register'>
+            Register
+          </Link>
+      </div>
     )
   }
 

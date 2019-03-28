@@ -29,7 +29,7 @@ export default class CreateShowdownPage extends Component {
           onEditSuccess={this.handleEditSuccess}
           props={this.props}
         />
-        <Button onClick={() => this.handleGoBackClicked()}>BACK</Button>
+        <Button className='EditUserPage_button' onClick={() => this.handleGoBackClicked()}>BACK</Button>
       </Section>
     )
   }

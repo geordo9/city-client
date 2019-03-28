@@ -3,27 +3,56 @@
   flex-wrap: wrap;
 }
 
+.UserPage a {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: goldenrod;
+  background-color: #202a25;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+.UserPage button {
+  font-size: 18px;
+  color: goldenrod;
+  background-color: #202a25;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
 .UserPage h2 {
-  text-align: center;
+  font-size: 30px;
+  color: goldenrod;
+}
+
+.UserPage span {
+  color: #C2C2C2;
 }
 
 .UserPage__favorite-city {
-  margin-left: 20px;
+  font-size: 24px;
+}
+
+.UserPage__teams {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.UserPage__list {
+  font-size: 20px;
 }
 
 .UserPage__showdowns {
   list-style-type: none;
+  padding-left: 0px;
+  padding-top: 10px;
 }
 
-.edit_favorites_button {
-  margin-left: 20px;
-}
-
-.UserPage__showdown_details {
-  margin-right: 10px;
-}
-
-.UserPage__create-new-showdown {
-  margin-left: 25px
+.UserPage__showdown {
+  background-color: #c0c0c0;
+  border-bottom: 1px solid #39414C;
+  padding-top:10px;
+  padding-bottom: 5px;
 }
 

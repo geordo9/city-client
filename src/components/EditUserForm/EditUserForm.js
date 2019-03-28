@@ -125,7 +125,7 @@ export default class ShowdownForm extends Component {
             <option value = '30'>Texas Rangers</option>
           </select>
         </div>
-        <Button type='submit'>
+        <Button className='EditUserPage_button' type='submit'>
           Submit
         </Button>
       </form>

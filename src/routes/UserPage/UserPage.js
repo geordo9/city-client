@@ -26,10 +26,8 @@ export default class ThingListPage extends Component {
       <UserCity user={user} />
       <UserBaseball user={user} />
       <UserShowdowns user={user} showdowns={showdowns} />
-      <Link to={'/create'}>
-        <Button className='UserPage__create-new-showdown'>
+      <Link to={'/create'} className='UserPage__create-new-showdown'>
           CREATE NEW SHOWDOWN
-        </Button>
       </Link >
     </>
   }
@@ -56,7 +54,7 @@ export default class ThingListPage extends Component {
 
 function UserCity({user}) {
   return (
-    <h3 className='UserPage__favorite-city'>Favorite City: {UserCitySwitch(user.favorite_city)}</h3>
+    <h3 className='UserPage__favorite-city'><span>Favorite City: </span>{UserCitySwitch(user.favorite_city)}</h3>
   )
 }
 
@@ -125,14 +123,12 @@ function UserBaseball({user}) {
   return (
     <section className='UserPage__favorites'>
       <ul className='UserPage__teams'>
-        <p className='UserPage__baseball'>
-          Favorite Baseball Team: {UserBaseballSwitch(user.favorite_baseball)}
-        </p>
+        <li className='UserPage__list'>
+          <span>Favorite Baseball Team: </span>{UserBaseballSwitch(user.favorite_baseball)}
+        </li>
       </ul>
-      <Link to={'/edit'}>
-        <Button className='edit_favorites_button'>
+      <Link to={'/edit'} className='edit_favorites_button' >
           Edit Favorites
-        </Button>
       </Link>
     </section>
   )
@@ -218,10 +214,8 @@ function UserShowdowns({user,  showdowns = [] }) {
             Playoff Record: {showdown.user_total_wins} <Hyph /> {showdown.user_total_loses}
           </h4>
           <section className='UserPage__showdown_buttons'>
-            <Link to={`/showdown/${showdown.id}`}>
-              <Button className='UserPage__showdown_details'>  
+            <Link to={`/showdown/${showdown.id}`} className='UserPage__showdown_details'>
                 Details
-              </Button>
             </Link>
             <Button className='UserPage__showdown_delete'>Delete</Button>
           </section>

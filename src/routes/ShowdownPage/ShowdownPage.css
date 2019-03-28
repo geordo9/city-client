@@ -9,6 +9,19 @@
   font-weight: 100;
 }
 
-.showdown_buttons {
+.showdown_user {
+  text-decoration: none;
+  color: #222;
+}
+
+.showdown_delete,
+.create_showdown {
   text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: goldenrod;
+  background-color: #202a25;
+  border-radius: 10px;
+  padding: 5px 15px;
 }
