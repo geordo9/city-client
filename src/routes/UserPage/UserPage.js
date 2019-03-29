@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
-import CityApiService from '../../services/city-api-service'
-import ShowdownApiService from '../../services/showdown-api-service'
-import { Section, Button, Hyph } from '../../components/Utils/Utils'
+import { Section, Hyph } from '../../components/Utils/Utils'
 import moment from 'moment';
 import './UserPage.css'
 
@@ -25,7 +23,7 @@ export default class ThingListPage extends Component {
       <h2>{user.user_name}</h2>
       <UserCity user={user} />
       <UserBaseball user={user} />
-      <UserShowdowns user={user} showdowns={showdowns} />
+      <UserShowdowns  showdowns={showdowns} />
       <Link to={'/create'} className='UserPage__create-new-showdown'>
           CREATE NEW SHOWDOWN
       </Link >
@@ -201,7 +199,7 @@ function UserBaseballSwitch(baseballId) {
   }
 }
 
-function UserShowdowns({user,  showdowns = [] }) {
+function UserShowdowns( { showdowns = [] }) {
   
   return (
     <ul className='UserPage__showdowns'>
@@ -215,9 +213,8 @@ function UserShowdowns({user,  showdowns = [] }) {
           </h4>
           <section className='UserPage__showdown_buttons'>
             <Link to={`/showdown/${showdown.id}`} className='UserPage__showdown_details'>
-                Details
+                Showdown Details
             </Link>
-            <Button className='UserPage__showdown_delete'>Delete</Button>
           </section>
           <p className='UserPage__showdown-created'>
             Created On: {moment(showdown.date_created).format('MMMM Do YYYY')}

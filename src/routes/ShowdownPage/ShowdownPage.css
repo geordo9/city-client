@@ -15,7 +15,8 @@
 }
 
 .showdown_delete,
-.create_showdown {
+.create_showdown,
+.profile_button {
   text-align: center;
   font-size: 18px;
   font-weight: 700;

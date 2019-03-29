@@ -1,8 +1,6 @@
 .LandingPage {
     margin: 0 auto;
     max-width: 650px;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .LandingPage__footer {
@@ -15,6 +13,8 @@
     border-bottom: 1px solid #39414C;
     padding-top:20px;
     padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .LandingPage a {
@@ -23,4 +23,8 @@
     background-color: #202a25;
     border-radius: 10px;
     padding: 5px 15px;
+}
+
+.LandingPage img {
+    width: 100%
 }

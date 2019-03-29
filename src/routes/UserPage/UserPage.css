@@ -26,7 +26,8 @@
   color: goldenrod;
 }
 
-.UserPage span {
+.UserPage__list span,
+.UserPage__favorite-city span {
   color: #C2C2C2;
 }
 

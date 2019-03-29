@@ -28,7 +28,7 @@ export default class CreateShowdownPage extends Component {
           onCreationSuccess={this.handleCreationSuccess}
           props={this.props}
         />
-        <Button className='CreateShowdownPage_button' onClick={() => this.handleGoBackClicked()}>BACK</Button>
+        <Button className='CreateShowdownPage_button' onClick={() => this.handleGoBackClicked()}>User Profile</Button>
       </Section>
     )
   }

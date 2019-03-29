@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '../../components/Utils/Utils'
 import TokenService from '../../services/token-service'
 import './LandingPage.css'
 
@@ -43,15 +42,15 @@ export default class ThingListPage extends Component {
         <header>
             <h3>Stack up the Cities</h3>
         </header>
-        <p>[<em>placeholder for screenshot of records interface</em>]</p>
+        <img src={require('./showdown_page.PNG')} alt={"an example of the showdown page"} />
         <p>City Showdown lets you compare your city's playoffs record against another across the four major sports.</p>
       </section>
       <section>
         <header>
-            <h3>Yankees/Giants or Mets/Jets? Customize your favorite teams!</h3>
+            <h3>Yankees or Mets? Cubs or White Sox? Customize your favorite teams!</h3>
         </header>
-        <p>[<em>placeholder for screenshot of registration</em>]</p>
-        <p>Many cities have multiple teams for a single sport. Who are we to overlap the Islanders 80s dynasty with the Rangers 1994 Stanley Cup?</p>
+        <img src={require('./edit_user_page.PNG')} alt={"an example of the edit user page"} />
+        <p>Many cities have multiple teams for a single sport. Who are we to overlap the 2005 White Sox title with the Cubbies' win 2016?</p>
       </section>
       <footer className="LandingPage__footer">
         {TokenService.hasAuthToken()

@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage component renders a LandingPage by default 1`] = `
+<main
+  className="LandingPage"
+  role="main"
+>
+  <header
+    role="banner"
+  >
+    <h1>
+      City Showdown
+    </h1>
+    <h2>
+      A chance to finally stack up your teams against your friends
+    </h2>
+  </header>
+  <section>
+    <header>
+      <h3>
+        Stack up the Cities
+      </h3>
+    </header>
+    <img
+      alt="an example of the showdown page"
+      src="showdown_page.PNG"
+    />
+    <p>
+      City Showdown lets you compare your city's playoffs record against another across the four major sports.
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Yankees or Mets? Cubs or White Sox? Customize your favorite teams!
+      </h3>
+    </header>
+    <img
+      alt="an example of the edit user page"
+      src="edit_user_page.PNG"
+    />
+    <p>
+      Many cities have multiple teams for a single sport. Who are we to overlap the 2005 White Sox title with the Cubbies' win 2016?
+    </p>
+  </section>
+  <footer
+    className="LandingPage__footer"
+  >
+    <div>
+      <header>
+        <h3>
+          Ready to see how your city stacks up? Sign-up!
+        </h3>
+      </header>
+      <Link
+        className="registration-button"
+        replace={false}
+        to="/register"
+      >
+        Register
+      </Link>
+    </div>
+  </footer>
+</main>
+`;
+
+exports[`LandingPage component renders a ShowdownPage by default 1`] = `
+<main
+  className="LandingPage"
+  role="main"
+>
+  <header
+    role="banner"
+  >
+    <h1>
+      City Showdown
+    </h1>
+    <h2>
+      A chance to finally stack up your teams against your friends
+    </h2>
+  </header>
+  <section>
+    <header>
+      <h3>
+        Stack up the Cities
+      </h3>
+    </header>
+    <img
+      alt="an example of the showdown page"
+      src="showdown_page.PNG"
+    />
+    <p>
+      City Showdown lets you compare your city's playoffs record against another across the four major sports.
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Yankees or Mets? Cubs or White Sox? Customize your favorite teams!
+      </h3>
+    </header>
+    <img
+      alt="an example of the edit user page"
+      src="edit_user_page.PNG"
+    />
+    <p>
+      Many cities have multiple teams for a single sport. Who are we to overlap the 2005 White Sox title with the Cubbies' win 2016?
+    </p>
+  </section>
+  <footer
+    className="LandingPage__footer"
+  >
+    <div>
+      <header>
+        <h3>
+          Ready to see how your city stacks up? Sign-up!
+        </h3>
+      </header>
+      <Link
+        className="registration-button"
+        replace={false}
+        to="/register"
+      >
+        Register
+      </Link>
+    </div>
+  </footer>
+</main>
+`;

@@ -4,8 +4,6 @@
 * {
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* background-color: #202a25;
-  color: #EEEDF7; */
 }
 
 body {
@@ -23,24 +21,4 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: #555;
-}
-
-.blue {
-  color: #477ACC;
-}
-
-.yellow {
-  color: #EAC435;
-}
-
-.green {
-  color: #09a55e;
-}
-
-.red {
-  color: #CA1551;
-}
-
-.orange {
-  color: #FB4D3D;
 }

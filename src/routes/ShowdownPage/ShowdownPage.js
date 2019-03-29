@@ -26,10 +26,16 @@ export default class ShowdownPage extends Component {
       .then(history.push(`/user`))
   }
 
+  handleGoBackClicked = () => {
+      const  { history } = this.props;
+      history.goBack();
+  }
 
   renderShowdown() {
     const { user, showdown } = this.context
     console.log(this.context);
+    console.log("---BOUNDARY---")
+    console.log(user);
     return <>
       <h2><Link to={`/user`} className='showdown_user'>{user.user_name}'s</Link> Squad</h2> 
       <h3>{UserBaseballSwitch(showdown.user_baseball_team)} <Hyph />VS.<Hyph /> {UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
@@ -40,6 +46,7 @@ export default class ShowdownPage extends Component {
         <Link to='/create' className='create_showdown'>
         CREATE NEW SHOWDOWN
         </Link>
+        <Button onClick={() => this.handleGoBackClicked()} className='profile_button'>PROFILE PAGE</Button>
       </section>
     </>
   }
@@ -129,66 +136,5 @@ function UserBaseballSwitch(baseballId) {
       return 'Texas Rangers'
     default:
       return 'No Baseball Team Selected'
-  }
-}
-
-function UserCitySwitch(cityId) {
-  switch (cityId) {
-    case 1:
-      return 'Atlanta'
-    case 2:
-      return 'Baltimore'
-    case 3:
-      return 'Boston'
-    case 4:
-      return 'Chicago'
-    case 5:
-      return 'Cincinnati'
-    case 6:
-      return 'Cleveland'
-    case 7:
-      return 'Detroit'
-    case 8:
-      return 'Dallas'
-    case 9:
-      return 'Denver'
-    case 10:
-      return 'Houston'
-    case 11:
-      return 'Kansas City'
-    case 12:
-      return 'Los Angeles'
-    case 13:
-      return 'Miami'
-    case 14:
-      return 'Milwaukee'
-    case 15:
-      return 'Minnesota'
-    case 16:
-      return 'New York'
-    case 17:
-      return 'Oakland'
-    case 18:
-      return 'Philadelphia'
-    case 19:
-      return 'Phoneix'
-    case 20:
-      return 'Pittsburgh'
-    case 21:
-      return 'Saint Louis'
-    case 22:
-      return 'San Diego'
-    case 23:
-      return 'San Francisco'
-    case 24:
-      return 'Seattle'
-    case 25:
-      return 'Tampa Bay'
-    case 26:
-      return 'Toronto'
-    case 27:
-      return 'Washington'
-    default:
-      return 'No Favorite City. Something is wrong'
   }
 }

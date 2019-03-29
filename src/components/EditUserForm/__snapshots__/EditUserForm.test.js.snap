@@ -1,0 +1,665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration Form component renders a .EditUserForm by default 1`] = `
+<form
+  className="EditUserForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="favorite_city"
+  >
+    <label
+      htmlFor="EditUserForm__favorite_city"
+    >
+      Edit Your City
+    </label>
+    <select
+      id="EditUserForm__favorite_city"
+      name="favorite_city"
+      required={true}
+    >
+      <option
+        value="1"
+      >
+        Atlanta
+      </option>
+      <option
+        value="2"
+      >
+         Baltimore
+      </option>
+      <option
+        value="3"
+      >
+         Boston
+      </option>
+      <option
+        value="4"
+      >
+         Chicago
+      </option>
+      <option
+        value="5"
+      >
+         Cincinnati
+      </option>
+      <option
+        value="6"
+      >
+         Cleveland
+      </option>
+      <option
+        value="7"
+      >
+         Detroit
+      </option>
+      <option
+        value="8"
+      >
+         Dallas
+      </option>
+      <option
+        value="9"
+      >
+         Denver
+      </option>
+      <option
+        value="10"
+      >
+        Houston
+      </option>
+      <option
+        value="11"
+      >
+        Kansas City
+      </option>
+      <option
+        value="12"
+      >
+        Los Angeles
+      </option>
+      <option
+        value="13"
+      >
+        Miami
+      </option>
+      <option
+        value="14"
+      >
+        Milwaukee
+      </option>
+      <option
+        value="15"
+      >
+        Minnesota
+      </option>
+      <option
+        value="16"
+      >
+        New York
+      </option>
+      <option
+        value="17"
+      >
+        Oakland
+      </option>
+      <option
+        value="18"
+      >
+        Philadelphia
+      </option>
+      <option
+        value="19"
+      >
+        Phoneix
+      </option>
+      <option
+        value="20"
+      >
+        Pittsburgh
+      </option>
+      <option
+        value="21"
+      >
+        Saint Louis
+      </option>
+      <option
+        value="22"
+      >
+        San Diego
+      </option>
+      <option
+        value="23"
+      >
+        San Francisco
+      </option>
+      <option
+        value="24"
+      >
+        Seattle
+      </option>
+      <option
+        value="25"
+      >
+        Tampa Bay
+      </option>
+      <option
+        value="26"
+      >
+        Toronto
+      </option>
+      <option
+        value="27"
+      >
+        Washington
+      </option>
+    </select>
+  </div>
+  <div
+    className="favorite_baseball"
+  >
+    <label
+      htmlFor="EditUserForm__favorite_baseball"
+    >
+      Edit Your Team
+    </label>
+    <select
+      id="EditUserForm__favorite_baseball"
+      name="favorite_baseball"
+      required={true}
+    >
+      <option
+        value="1"
+      >
+        Atlanta Braves
+      </option>
+      <option
+        value="2"
+      >
+        Miami Marlins
+      </option>
+      <option
+        value="3"
+      >
+        New York Mets
+      </option>
+      <option
+        value="4"
+      >
+        Washington Nationals
+      </option>
+      <option
+        value="5"
+      >
+        Philadelphia Phillies
+      </option>
+      <option
+        value="6"
+      >
+        Chicago Cubs
+      </option>
+      <option
+        value="7"
+      >
+        Cincinnati Reds
+      </option>
+      <option
+        value="8"
+      >
+        Pittsburgh Pirates
+      </option>
+      <option
+        value="9"
+      >
+        St. Louis Cardinals
+      </option>
+      <option
+        value="10"
+      >
+        Milwaukee Brewers
+      </option>
+      <option
+        value="11"
+      >
+        Arizona Diamondbacks
+      </option>
+      <option
+        value="12"
+      >
+        Los Angeles Dodgers
+      </option>
+      <option
+        value="13"
+      >
+        Colorado Rockies
+      </option>
+      <option
+        value="14"
+      >
+        San Francisco Giants
+      </option>
+      <option
+        value="15"
+      >
+        San Diego Padres
+      </option>
+      <option
+        value="16"
+      >
+        Boston Red Sox
+      </option>
+      <option
+        value="17"
+      >
+        Baltimore Orioles
+      </option>
+      <option
+        value="18"
+      >
+        New York Yankees
+      </option>
+      <option
+        value="19"
+      >
+        Tampa Bay Rays
+      </option>
+      <option
+        value="20"
+      >
+        Toronto Blue Jays
+      </option>
+      <option
+        value="21"
+      >
+        Chicago White Sox
+      </option>
+      <option
+        value="22"
+      >
+        Kansas City Royals
+      </option>
+      <option
+        value="23"
+      >
+        Detroit Tigers
+      </option>
+      <option
+        value="24"
+      >
+        Minnesota Twins
+      </option>
+      <option
+        value="25"
+      >
+        Cleveland Indians
+      </option>
+      <option
+        value="26"
+      >
+        Los Angeles Angels
+      </option>
+      <option
+        value="27"
+      >
+        Houston Astros
+      </option>
+      <option
+        value="28"
+      >
+        Oakland Athletics
+      </option>
+      <option
+        value="29"
+      >
+        Seattle Mariners
+      </option>
+      <option
+        value="30"
+      >
+        Texas Rangers
+      </option>
+    </select>
+  </div>
+  <Button
+    className="EditUserPage_button"
+    type="submit"
+  >
+    Submit
+  </Button>
+</form>
+`;
+
+exports[`Registration Form component renders the RegistrationFrom given props 1`] = `
+<form
+  className="EditUserForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="favorite_city"
+  >
+    <label
+      htmlFor="EditUserForm__favorite_city"
+    >
+      Edit Your City
+    </label>
+    <select
+      id="EditUserForm__favorite_city"
+      name="favorite_city"
+      required={true}
+    >
+      <option
+        value="1"
+      >
+        Atlanta
+      </option>
+      <option
+        value="2"
+      >
+         Baltimore
+      </option>
+      <option
+        value="3"
+      >
+         Boston
+      </option>
+      <option
+        value="4"
+      >
+         Chicago
+      </option>
+      <option
+        value="5"
+      >
+         Cincinnati
+      </option>
+      <option
+        value="6"
+      >
+         Cleveland
+      </option>
+      <option
+        value="7"
+      >
+         Detroit
+      </option>
+      <option
+        value="8"
+      >
+         Dallas
+      </option>
+      <option
+        value="9"
+      >
+         Denver
+      </option>
+      <option
+        value="10"
+      >
+        Houston
+      </option>
+      <option
+        value="11"
+      >
+        Kansas City
+      </option>
+      <option
+        value="12"
+      >
+        Los Angeles
+      </option>
+      <option
+        value="13"
+      >
+        Miami
+      </option>
+      <option
+        value="14"
+      >
+        Milwaukee
+      </option>
+      <option
+        value="15"
+      >
+        Minnesota
+      </option>
+      <option
+        value="16"
+      >
+        New York
+      </option>
+      <option
+        value="17"
+      >
+        Oakland
+      </option>
+      <option
+        value="18"
+      >
+        Philadelphia
+      </option>
+      <option
+        value="19"
+      >
+        Phoneix
+      </option>
+      <option
+        value="20"
+      >
+        Pittsburgh
+      </option>
+      <option
+        value="21"
+      >
+        Saint Louis
+      </option>
+      <option
+        value="22"
+      >
+        San Diego
+      </option>
+      <option
+        value="23"
+      >
+        San Francisco
+      </option>
+      <option
+        value="24"
+      >
+        Seattle
+      </option>
+      <option
+        value="25"
+      >
+        Tampa Bay
+      </option>
+      <option
+        value="26"
+      >
+        Toronto
+      </option>
+      <option
+        value="27"
+      >
+        Washington
+      </option>
+    </select>
+  </div>
+  <div
+    className="favorite_baseball"
+  >
+    <label
+      htmlFor="EditUserForm__favorite_baseball"
+    >
+      Edit Your Team
+    </label>
+    <select
+      id="EditUserForm__favorite_baseball"
+      name="favorite_baseball"
+      required={true}
+    >
+      <option
+        value="1"
+      >
+        Atlanta Braves
+      </option>
+      <option
+        value="2"
+      >
+        Miami Marlins
+      </option>
+      <option
+        value="3"
+      >
+        New York Mets
+      </option>
+      <option
+        value="4"
+      >
+        Washington Nationals
+      </option>
+      <option
+        value="5"
+      >
+        Philadelphia Phillies
+      </option>
+      <option
+        value="6"
+      >
+        Chicago Cubs
+      </option>
+      <option
+        value="7"
+      >
+        Cincinnati Reds
+      </option>
+      <option
+        value="8"
+      >
+        Pittsburgh Pirates
+      </option>
+      <option
+        value="9"
+      >
+        St. Louis Cardinals
+      </option>
+      <option
+        value="10"
+      >
+        Milwaukee Brewers
+      </option>
+      <option
+        value="11"
+      >
+        Arizona Diamondbacks
+      </option>
+      <option
+        value="12"
+      >
+        Los Angeles Dodgers
+      </option>
+      <option
+        value="13"
+      >
+        Colorado Rockies
+      </option>
+      <option
+        value="14"
+      >
+        San Francisco Giants
+      </option>
+      <option
+        value="15"
+      >
+        San Diego Padres
+      </option>
+      <option
+        value="16"
+      >
+        Boston Red Sox
+      </option>
+      <option
+        value="17"
+      >
+        Baltimore Orioles
+      </option>
+      <option
+        value="18"
+      >
+        New York Yankees
+      </option>
+      <option
+        value="19"
+      >
+        Tampa Bay Rays
+      </option>
+      <option
+        value="20"
+      >
+        Toronto Blue Jays
+      </option>
+      <option
+        value="21"
+      >
+        Chicago White Sox
+      </option>
+      <option
+        value="22"
+      >
+        Kansas City Royals
+      </option>
+      <option
+        value="23"
+      >
+        Detroit Tigers
+      </option>
+      <option
+        value="24"
+      >
+        Minnesota Twins
+      </option>
+      <option
+        value="25"
+      >
+        Cleveland Indians
+      </option>
+      <option
+        value="26"
+      >
+        Los Angeles Angels
+      </option>
+      <option
+        value="27"
+      >
+        Houston Astros
+      </option>
+      <option
+        value="28"
+      >
+        Oakland Athletics
+      </option>
+      <option
+        value="29"
+      >
+        Seattle Mariners
+      </option>
+      <option
+        value="30"
+      >
+        Texas Rangers
+      </option>
+    </select>
+  </div>
+  <Button
+    className="EditUserPage_button"
+    type="submit"
+  >
+    Submit
+  </Button>
+</form>
+`;
