@@ -43,7 +43,7 @@ export default class ThingListPage extends Component {
             <h3>Stack up the Cities</h3>
         </header>
         <img src={require('./showdown_page.PNG')} alt={"an example of the showdown page"} />
-        <p>City Showdown lets you compare your city's playoffs record against another across the four major sports.</p>
+        <p>City Showdown lets you compare your city's MLB playoff records against another city's. NBA, NFL, and NHL coming soon!</p>
       </section>
       <section>
         <header>
