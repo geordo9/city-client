@@ -9,6 +9,10 @@
   font-weight: 100;
 }
 
+.ShowdownPage button {
+  text-align: center;
+}
+
 .showdown_user {
   text-decoration: none;
   color: #222;
@@ -17,7 +21,6 @@
 .showdown_delete,
 .create_showdown,
 .profile_button {
-  text-align: center;
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
@@ -25,4 +28,8 @@
   background-color: #202a25;
   border-radius: 10px;
   padding: 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  margin-right: 10px;
 }
