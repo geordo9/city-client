@@ -21,7 +21,6 @@ export default class CreateShowdownPage extends Component {
   }
 
   render() {
-      console.log(this.props.history)
     return (
       <Section className='EditUserPage'>
         <h2>Edit Your Squad of Favorites</h2>

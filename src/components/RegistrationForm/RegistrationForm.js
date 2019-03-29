@@ -12,7 +12,6 @@ export default class RegistrationForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { user_name, password, favorite_city } = ev.target
-    // console.log( favorite_city.value);
 
     this.setState({error: null})
     AuthApiService.postUser({

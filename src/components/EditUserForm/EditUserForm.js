@@ -23,7 +23,6 @@ export default class ShowdownForm extends Component {
     ev.preventDefault()
     const { favorite_city, favorite_baseball } = ev.target
     const userId = this.context.user.id;
-    console.log(this.context);
 
     this.setState({error: null})
     CityApiService.editUser(userId, {
@@ -46,7 +45,6 @@ export default class ShowdownForm extends Component {
 
   render() {
     const { error } = this.state
-    // console.log(this.props.props.match.params)
     return (
       <form
         className='EditUserForm'

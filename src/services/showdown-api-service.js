@@ -2,17 +2,6 @@ import config from '../config'
 import TokenService from './token-service';
 
 const ShowdownApiService = {
-    getShowdowns() {
-        return fetch(`${config.API_ENDPOINT}/showdowns`, {
-      headers: {
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-    },
     //get function that gets a showdown by its id
     getShowdown(showdownId) {
         return fetch(`${config.API_ENDPOINT}/showdowns/${showdownId}`, {
@@ -26,6 +15,7 @@ const ShowdownApiService = {
           : res.json()
       )
     },
+    //delete function that deletes showdown
     deleteShowdown(showdownId) {
         return fetch(`${config.API_ENDPOINT}/showdowns/${showdownId}`, {
             method: 'DELETE',
@@ -33,12 +23,9 @@ const ShowdownApiService = {
                 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             },
         })
-      .then(res => res.json)
-        // (!res.ok)
-        //   ? res.json().then(e => Promise.reject(e))
-        //   : res.json()
-      
+      .then(res => res.json)    
     },
+    //get function that gets all of the user's showdowns
     getShowdownByUser(userId) {
       return fetch(`${config.API_ENDPOINT}/showdowns/user/${userId}`, {
       headers: {

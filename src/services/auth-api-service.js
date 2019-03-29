@@ -5,7 +5,6 @@ import IdleService from './idle-service'
 const AuthApiService = {
   
   postUser(user){
-    console.log(user);
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
@@ -34,7 +33,6 @@ const AuthApiService = {
           : res.json()
       )
       .then(res => {
-        console.log(res.authToken)
         TokenService.saveAuthToken(res.authToken)
         IdleService.regiserIdleTimerResets()
         TokenService.queueCallbackBeforeExpiry(() => {
@@ -64,7 +62,7 @@ const AuthApiService = {
         })
       })
       .catch(error => {
-          console.log('refresh token request error')
+          ('refresh token request error')
           console.error(error)
         })
   },

@@ -44,7 +44,6 @@ export default class ShowdownForm extends Component {
 
   render() {
     const { error } = this.state
-    // console.log(this.props.props.match.params)
     return (
       <form
         className='ShowdownForm'

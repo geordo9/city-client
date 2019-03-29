@@ -33,9 +33,7 @@ export default class ShowdownPage extends Component {
 
   renderShowdown() {
     const { user, showdown } = this.context
-    console.log(this.context);
-    console.log("---BOUNDARY---")
-    console.log(user);
+
     return <>
       <h2><Link to={`/user`} className='showdown_user'>{user.user_name}'s</Link> Squad</h2> 
       <h3>{UserBaseballSwitch(showdown.user_baseball_team)} <Hyph />VS.<Hyph /> {UserBaseballSwitch(showdown.opp_baseball_team)}</h3>
@@ -58,9 +56,7 @@ export default class ShowdownPage extends Component {
       content = (error.error === `Showdown doesn't exist`)
         ? <p className='red'>Showdown not found</p>
         : <p className='red'>There was an error</p>}
-    // } else if (!showdown.id) {
-    //   content = <div className='loading' />
-    // } 
+
     else {
       content = this.renderShowdown()
     }

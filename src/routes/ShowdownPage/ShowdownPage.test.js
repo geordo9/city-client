@@ -43,7 +43,6 @@ import ShowdownPage from './ShowdownPage'
 // }); 
 
 //   it('renders a ShowdownPage by default', () => {
-//       console.log(context);
 //     const wrapper = shallow(<ShowdownPage />, {context})
 //     expect(toJson(wrapper)).toMatchSnapshot()
 //   })

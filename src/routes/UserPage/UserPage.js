@@ -9,15 +9,11 @@ export default class ThingListPage extends Component {
   static contextType = UserContext
 
   componentDidMount() {
-    const userId = this.context.user.id
-    console.log(userId)
     this.context.clearError()
   }
 
   renderUser() {
     const { user, showdowns} = this.context
-    console.log(user)
-    console.log (showdowns)
 
     return <>
       <h2>{user.user_name}</h2>
