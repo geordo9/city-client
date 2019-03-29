@@ -1,4 +1,4 @@
-# Thingful Client
+# City Showdown Client
 
 ## Setting Up
 
